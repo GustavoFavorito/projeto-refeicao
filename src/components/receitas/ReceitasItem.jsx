@@ -33,7 +33,6 @@ function ReceitasItem({ ingredientes }) {
                                         src={item[index].image_path}
                                         alt="receitas-imagem"
                                     />
-                                    {console.log(item[index].image_path)}
                                 </div>
                                 <div className="receitas-item-titulo">
                                     <h3>{item[index].titulo}</h3>
