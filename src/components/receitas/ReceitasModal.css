@@ -1,0 +1,79 @@
+.receitas-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 70%;
+    max-height: 80%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 35px;
+    z-index: 1000;
+    border-radius: 30px 30px;
+    display: inline-block;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.receitas-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.receitas-modal > p {
+    float: right;
+    max-width: 60%;
+    font-size: 75%;
+}
+
+.receitas-modal > h2 {
+    font-size: 26px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.receitas-modal-imagem,
+.receitas-modal-ingredientes {
+    display: grid;
+    max-width: 30%;
+    text-align: left;
+}
+
+.receitas-modal-ingredientes {
+    margin-top: 10px;
+}
+
+.receitas-modal-ingredientes > ul {
+    list-style-type: none;
+    margin-top: 1vh;
+}
+
+.receitas-modal-ingredientes > ul > li {
+    margin-top: 1vh;
+    padding-bottom: 1vh;
+    font-size: 75%;
+    color: rgb(70, 70, 70);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    white-space: nowrap;
+}
+
+.receitas-modal-ingredientes > ul > li:last-child {
+    border-bottom: none;
+    margin-bottom: 15px;
+}
+
+.receitas-modal-imagem > img {
+    max-width: 100%;
+    border-radius: 30px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    width: 100%;
+    aspect-ratio: 1 / 1;  
+    object-fit: cover;
+}
+
+.modal-unidade {
+    float: right;
+}

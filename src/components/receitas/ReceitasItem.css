@@ -1,0 +1,54 @@
+.receitas-items {
+    padding: 10% 0;
+}
+
+.receitas-items > ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 25px;
+    list-style-type: none;
+}
+
+.receitas-item {
+    -webkit-box-shadow: 2px 2px 8px 6px rgba(0,0,0,0.2);
+    -moz-box-shadow: 2px 2px 8px 6px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 8px 6px rgba(0,0,0,0.2);
+    border-radius: 30px;
+    transition: 0.4s;
+    background-color: #fff;
+}
+
+.receitas-item:hover {
+    -webkit-box-shadow: 2px 2px 8px 6px rgba(0,0,0,0.5);
+    -moz-box-shadow: 2px 2px 8px 6px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 8px 6px rgba(0,0,0,0.5);
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.receitas-item:hover > li > .receitas-item-imagem > img {
+    transform: scale(1.2);
+    transition: transform 0.4s;
+}
+
+.receitas-item-titulo > h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding-top: 10px;
+}
+
+.receitas-item-imagem {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    overflow: hidden;
+    height: 1fr;
+}
+
+.receitas-item-imagem > img {
+    width: 100%;
+    aspect-ratio: 1 / 1;  
+    object-fit: cover;
+    transition: transform 0.4s;
+}

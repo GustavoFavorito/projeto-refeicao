@@ -1,0 +1,24 @@
+.receitas-section {
+    margin-right: 10%;
+    margin-left: 10%;
+    min-height: 100vh;
+}
+
+section {
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            from(rgba(0, 0, 0, 0.7)),
+            to(rgba(0, 0, 0, 0.7))
+        ),
+        url(/background.avif);
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(/background.avif);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(/background.avif);
+    background-size: auto;
+    background-position: center;
+    min-height: 100vh;
+    background-attachment: scroll;
+}
