@@ -14,10 +14,16 @@ function Header() {
                             <a href="#refeicoes">Refeições</a>
                         </li>
                         <li>
-                            <a href="#ingredientes">Ingredientes</a>
+                            <a href="#cadastro">Cadastro</a>
                         </li>
                         <li>
-                            <a href="#home">Salame</a>
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+                            >
+                                Salame
+                            </a>
                         </li>
                     </ul>
                 </nav>
