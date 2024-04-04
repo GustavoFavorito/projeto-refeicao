@@ -19,18 +19,12 @@
     color: #fff;
 }
 
-form {
-    display: block;
-    width: 70%;
-    margin-left: 15%;
-    padding-top: 10vh;
+.form-cadastro {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10vw;
+    padding-top: 2em;
+    width: 80vw;
+    font-size: 75%;
 }
 
-.pull-right {
-    float: right;
-    margin-bottom: auto;
-}
-
-.form-group {
-    margin-top: 2vh;
-}

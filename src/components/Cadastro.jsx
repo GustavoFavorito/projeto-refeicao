@@ -85,7 +85,9 @@ function Cadastro() {
                     return err;
                 });
         } else {
-            alert('Necessário ao menos 3 (três) ingredientes para cadastro de Receita!');
+            alert(
+                'Necessário ao menos 3 (três) ingredientes para cadastro de Receita!'
+            );
         }
     };
 
@@ -96,53 +98,66 @@ function Cadastro() {
                 autoComplete="off"
                 className="form-cadastro"
             >
-                <div>
-                    <label htmlFor="titulo">Nome da Receita</label>
-                    <input
-                        type="text"
-                        name="titulo"
-                        id="titulo"
-                        placeholder="Receita"
-                        value={newTitulo}
-                        onChange={handleTituloChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label htmlFor="image_path">Foto da Receita</label>
-                    <input
-                        type="text"
-                        name="image_path"
-                        id="image_path"
-                        placeholder="Foto"
-                        value={newImagem}
-                        onChange={handleImagemChange}
-                        required
-                    />
-                </div>
-                <div>
-                    <label htmlFor="descricao">Passo a Passo</label>
-                    <textarea
-                        name="descricao"
-                        id="descricao"
-                        cols="20"
-                        rows="4"
-                        placeholder="Passo-a-Passo"
-                        value={newDescricao}
-                        onChange={handleDescricaoChange}
-                        required
-                    ></textarea>
+                <div className="form-group form-campos_receita">
+                    <div className="form-row align-items-center">
+                        <div className="col col-md-4">
+                            <div className="form-titulo">
+                                <label htmlFor="titulo">Nome da Receita</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    name="titulo"
+                                    id="titulo"
+                                    placeholder="Receita"
+                                    value={newTitulo}
+                                    onChange={handleTituloChange}
+                                    required
+                                />
+                            </div>
+                            <div className="form-imagem">
+                                <label htmlFor="image_path">
+                                    Foto da Receita
+                                </label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    name="image_path"
+                                    id="image_path"
+                                    placeholder="Foto"
+                                    value={newImagem}
+                                    onChange={handleImagemChange}
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div className="col col-md-8">
+                            <div className="form-descricao">
+                                <label htmlFor="descricao">Passo a Passo</label>
+                                <textarea
+                                    name="descricao"
+                                    className="form-control"
+                                    id="descricao"
+                                    placeholder="Passo-a-Passo"
+                                    value={newDescricao}
+                                    onChange={handleDescricaoChange}
+                                    required
+                                ></textarea>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div>
                     {ingredientesList.map((ingrediente, index) => {
                         return (
-                            <div key={index}>
-                                <div>
-                                    <label htmlFor="nome">
-                                        Nome do Ingrediente
-                                    </label>
+                            <div
+                                key={index}
+                                className="form-ingredientes form-row align-items-end"
+                            >
+                                <div className="form-group col-md-4">
+                                    <label htmlFor="nome">Nome</label>
                                     <input
                                         type="text"
+                                        className="form-control"
                                         name="nome"
                                         id="nome"
                                         placeholder="Ingrediente"
@@ -156,12 +171,13 @@ function Cadastro() {
                                         required
                                     />
                                 </div>
-                                <div>
+                                <div className="form-group col-md-4">
                                     <label htmlFor="quantidade">
-                                        Quantidade do Ingrediente
+                                        Quantidade
                                     </label>
                                     <input
                                         type="number"
+                                        className="form-control"
                                         name="quantidade"
                                         id="quantidade"
                                         placeholder="Quantidade"
@@ -175,12 +191,11 @@ function Cadastro() {
                                         required
                                     />
                                 </div>
-                                <div>
-                                    <label htmlFor="unidade">
-                                        Unidade do Ingrediente
-                                    </label>
+                                <div className="form-group col-md-3">
+                                    <label htmlFor="unidade">Unidade</label>
                                     <input
                                         type="text"
+                                        className="form-control"
                                         name="unidade"
                                         id="unidade"
                                         placeholder="Unidade"
@@ -194,21 +209,35 @@ function Cadastro() {
                                         required
                                     />
                                 </div>
-                                <button
-                                    onClick={() =>
-                                        removeIngredientesField(index)
-                                    }
-                                >
-                                    Remove Ingrediente
-                                </button>
+                                <div className="botao-remover form-group col-md-1">
+                                    <button
+                                        onClick={() =>
+                                            removeIngredientesField(index)
+                                        }
+                                        className="btn btn-outline-danger form-control"
+                                    >
+                                        -
+                                    </button>
+                                </div>
                             </div>
                         );
                     })}
-                    <button onClick={addIngredientesField}>
-                        Novo Ingrediente
-                    </button>
+                    <div className="botao-adicionar form-group d-flex flex-row-reverse">
+                        <button
+                            className="btn btn-outline-success"
+                            onClick={addIngredientesField}
+                        >
+                            Novo Ingrediente
+                        </button>
+                    </div>
                 </div>
-                <input type="submit" value="Cadastrar" />
+                <div className='d-flex justify-content-start'>
+                    <input
+                        type="submit"
+                        className="btn btn-primary"
+                        value="Cadastrar"
+                    />
+                </div>
             </form>
         </section>
     );
