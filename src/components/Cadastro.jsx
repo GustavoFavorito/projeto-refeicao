@@ -8,6 +8,8 @@ function Cadastro() {
     const [newDescricao, setNewDescricao] = useState('');
     const [ingredientesList, setIngredientesList] = useState([
         { nome: '', quantidade: '', unidade: '' },
+        { nome: '', quantidade: '', unidade: '' },
+        { nome: '', quantidade: '', unidade: '' },
     ]);
 
     const handleTituloChange = (event) => {
@@ -38,6 +40,12 @@ function Cadastro() {
         setIngredientesList([...ingredientesList, ingredientesObject]);
     };
 
+    const removeIngredientesField = (index) => {
+        let ingredientes = [...ingredientesList];
+        ingredientes.splice(index, 1);
+        setIngredientesList(ingredientes);
+    };
+
     const addReceita = async (event) => {
         event.preventDefault();
 
@@ -47,34 +55,38 @@ function Cadastro() {
             descricao: newDescricao,
         };
 
-        receita.ingredientes = ingredientesList;
+        if (ingredientesList.length > 2) {
+            receita.ingredientes = ingredientesList;
 
-        await fetch(url, {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(receita),
-        })
-            .then((response) => {
-                if (response.status !== 200) {
-                    throw new Error(response.statusText);
-                }
+            await fetch(url, {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(receita),
+            })
+                .then((response) => {
+                    if (response.status !== 200) {
+                        throw new Error(response.statusText);
+                    }
 
-                return response.json();
-            })
-            .then(() => {
-                setNewTitulo('');
-                setNewImagem('');
-                setNewDescricao('');
-                setIngredientesList([
-                    { nome: '', quantidade: '', unidade: '' },
-                ]);
-            })
-            .catch((err) => {
-                return err;
-            });
+                    return response.json();
+                })
+                .then(() => {
+                    setNewTitulo('');
+                    setNewImagem('');
+                    setNewDescricao('');
+                    setIngredientesList([
+                        { nome: '', quantidade: '', unidade: '' },
+                    ]);
+                })
+                .catch((err) => {
+                    return err;
+                });
+        } else {
+            alert('Necessário ao menos 3 (três) ingredientes para cadastro de Receita!');
+        }
     };
 
     return (
@@ -182,6 +194,13 @@ function Cadastro() {
                                         required
                                     />
                                 </div>
+                                <button
+                                    onClick={() =>
+                                        removeIngredientesField(index)
+                                    }
+                                >
+                                    Remove Ingrediente
+                                </button>
                             </div>
                         );
                     })}
