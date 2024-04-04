@@ -3,7 +3,7 @@ import "./Ingredientes.css";
 
 function Ingredientes() {
 
-    const url = "https://api-receitas-7jslu65vla-rj.a.run.app/fetch-ingrediente";
+    const url = "https://projeto-residencia.rj.r.appspot.com/receita";
     const [headers, setHeaders] = useState([]);
     const [ingredientes, setIngredientes] = useState([]);
   

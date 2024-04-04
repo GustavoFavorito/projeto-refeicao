@@ -4,17 +4,13 @@ import ReceitasItem from "./ReceitasItem";
 
 function ReceitasSection() {
 
-    const url = "https://api-receitas-7jslu65vla-rj.a.run.app/fetch-receita";
+    const url = "https://projeto-residencia.rj.r.appspot.com/receita";
     const [ingredientesObject, setIngredientesObject] = useState([]);
   
     const fetchIngredientesObject = async () => {
         const response = await fetch(url);
         const responseObject = await response.json();
-        setIngredientesObject(
-            Object.values(
-                Object.groupBy(responseObject, ({ id_receita }) => id_receita)
-            )
-        );
+        setIngredientesObject(responseObject);
     };
   
     useEffect(() => {

@@ -5,10 +5,13 @@ function ReceitasIngredientes({ ingredientes }) {
     return (
         <>
             <ul className="receitas-ingredientes">
-                {ingredientes.map(ingrediente => (
-                    <li key={ingrediente.id_ingrediente} className="receitas-ingredientes-item">
+                {ingredientes.map((ingrediente, index) => (
+                    <li key={index} className="receitas-ingredientes-item">
                         <span className="nome">{ingrediente.nome}</span>
-                        <span className="unidade">{ingrediente.quantidade}{ingrediente.unidade}</span>
+                        <span className="unidade">
+                            {ingrediente.quantidade}
+                            {ingrediente.unidade}
+                        </span>
                     </li>
                 ))}
             </ul>

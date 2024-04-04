@@ -30,15 +30,14 @@ function ReceitasItem({ ingredientes }) {
                             <li>
                                 <div className="receitas-item-imagem">
                                     <img
-                                        src={item[index].image_path}
+                                        src={item.image_path}
                                         alt="receitas-imagem"
                                     />
-                                    {console.log(item[index].image_path)}
                                 </div>
                                 <div className="receitas-item-titulo">
-                                    <h3>{item[index].titulo}</h3>
+                                    <h3>{item.titulo}</h3>
                                 </div>
-                                <ReceitasIngredientes ingredientes={item} />
+                                <ReceitasIngredientes ingredientes={item.ingredientes} />
                             </li>
                         </div>
                     ))}

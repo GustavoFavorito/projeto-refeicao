@@ -8,16 +8,16 @@ function ReceitasModal({ isOpen, onClose, item }) {
         <>
             <div className="receitas-modal-overlay" onClick={onClose} />
             <div className="receitas-modal">
-                <h2>{item[0].titulo}</h2>
-                <p>{item[0].descricao}</p>
+                <h2>{item.titulo}</h2>
+                <p>{item.descricao}</p>
                 <div className="receitas-modal-imagem">
-                    <img src={item[0].image_path} alt="imagem modal" />
+                    <img src={item.image_path} alt="imagem modal" />
                 </div>
                 <div className="receitas-modal-ingredientes">
                     <ul>
-                        {item.map((elem) => (
+                        {item.ingredientes.map((elem, index) => (
                             <li
-                                key={elem.id_ingrediente}
+                                key={index}
                                 className="receitas-ingredientes-item"
                             >
                                 <span className="modal-nome">{elem.nome}</span>
