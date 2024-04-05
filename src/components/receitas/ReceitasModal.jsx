@@ -1,5 +1,5 @@
-import React from "react";
-import "./ReceitasModal.css";
+import React from 'react';
+import './ReceitasModal.css';
 
 function ReceitasModal({ isOpen, onClose, item }) {
     if (!isOpen) return null;
@@ -15,18 +15,38 @@ function ReceitasModal({ isOpen, onClose, item }) {
                 </div>
                 <div className="receitas-modal-ingredientes">
                     <ul>
-                        {item.ingredientes.map((elem, index) => (
-                            <li
-                                key={index}
-                                className="receitas-ingredientes-item"
-                            >
-                                <span className="modal-nome">{elem.nome}</span>
-                                <span className="modal-unidade">
-                                    {elem.quantidade}
-                                    {elem.unidade}
-                                </span>
-                            </li>
-                        ))}
+                        {item.ingredientes.map((elem, index) => {
+                            if (elem.quantidade > 0) {
+                                return (
+                                    <li
+                                        key={index}
+                                        className="receitas-ingredientes-item"
+                                    >
+                                        <span className="modal-nome">
+                                            {elem.nome}
+                                        </span>
+                                        <span className="modal-unidade">
+                                            {elem.quantidade}&nbsp;
+                                            {elem.unidade}
+                                        </span>
+                                    </li>
+                                );
+                            } else {
+                                return (
+                                    <li
+                                        key={index}
+                                        className="receitas-ingredientes-item"
+                                    >
+                                        <span className="modal-nome">
+                                            {elem.nome}
+                                        </span>
+                                        <span className="modal-unidade">
+                                            {elem.unidade}
+                                        </span>
+                                    </li>
+                                );
+                            }
+                        })}
                     </ul>
                 </div>
             </div>

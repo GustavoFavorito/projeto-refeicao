@@ -7,9 +7,9 @@ function Cadastro() {
     const [newImagem, setNewImagem] = useState('');
     const [newDescricao, setNewDescricao] = useState('');
     const [ingredientesList, setIngredientesList] = useState([
-        { nome: '', quantidade: '', unidade: '' },
-        { nome: '', quantidade: '', unidade: '' },
-        { nome: '', quantidade: '', unidade: '' },
+        { nome: '', quantidade: '0', unidade: '' },
+        { nome: '', quantidade: '0', unidade: '' },
+        { nome: '', quantidade: '0', unidade: '' },
     ]);
 
     const handleTituloChange = (event) => {
@@ -34,7 +34,7 @@ function Cadastro() {
     const addIngredientesField = () => {
         let ingredientesObject = {
             nome: '',
-            quantidade: '',
+            quantidade: '0',
             unidade: '',
         };
         setIngredientesList([...ingredientesList, ingredientesObject]);
@@ -166,16 +166,16 @@ function Cadastro() {
                                         required
                                     />
                                 </div>
-                                <div className="form-group col-md-4">
+                                <div className="form-group col-md-2">
                                     <label htmlFor="quantidade">
                                         Quantidade
                                     </label>
                                     <input
                                         type="number"
+                                        min="0"
                                         className="form-control"
                                         name="quantidade"
                                         id="quantidade"
-                                        placeholder="Quantidade"
                                         onChange={(event) =>
                                             handleIngredienteChange(
                                                 event,
@@ -186,14 +186,12 @@ function Cadastro() {
                                         required
                                     />
                                 </div>
-                                <div className="form-group col-md-3">
+                                <div className="form-group col-md-5">
                                     <label htmlFor="unidade">Unidade</label>
-                                    <input
-                                        type="text"
+                                    <select
                                         className="form-control"
                                         name="unidade"
                                         id="unidade"
-                                        placeholder="Unidade"
                                         onChange={(event) =>
                                             handleIngredienteChange(
                                                 event,
@@ -202,7 +200,14 @@ function Cadastro() {
                                         }
                                         value={ingrediente.unidade}
                                         required
-                                    />
+                                    >
+                                        <option value="">--Selecione uma Unidade--</option>
+                                        <option value="g">g</option>
+                                        <option value="mL">mL</option>
+                                        <option value="cc">Colher de Chá (cc)</option>
+                                        <option value="cs">Colher de Sopa (cs)</option>
+                                        <option value="xíc">Xícara (cs)</option>
+                                    </select>
                                 </div>
                                 <div className="botao-remover form-group col-md-1">
                                     <button
