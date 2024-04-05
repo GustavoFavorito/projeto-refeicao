@@ -1,7 +1,12 @@
 import React from 'react';
+import Fraction from 'fraction.js';
 import './ReceitasIngredientes.css';
 
 function ReceitasIngredientes({ ingredientes }) {
+    const formataQuantidade = (quantidade) => {
+        return new Fraction(quantidade).toFraction(true);
+    };
+
     return (
         <>
             <ul className="receitas-ingredientes">
@@ -14,7 +19,8 @@ function ReceitasIngredientes({ ingredientes }) {
                             >
                                 <span className="nome">{ingrediente.nome}</span>
                                 <span className="unidade">
-                                    {ingrediente.quantidade}&nbsp;
+                                    {formataQuantidade(ingrediente.quantidade)}
+                                    &nbsp;
                                     {ingrediente.unidade}
                                 </span>
                             </li>

@@ -1,8 +1,12 @@
 import React from 'react';
+import Fraction from 'fraction.js';
 import './ReceitasModal.css';
 
 function ReceitasModal({ isOpen, onClose, item }) {
     if (!isOpen) return null;
+    const formataQuantidade = (quantidade) => {
+        return new Fraction(quantidade).toFraction(true);
+    };
 
     return (
         <>
@@ -26,7 +30,7 @@ function ReceitasModal({ isOpen, onClose, item }) {
                                             {elem.nome}
                                         </span>
                                         <span className="modal-unidade">
-                                            {elem.quantidade}&nbsp;
+                                            {formataQuantidade(elem.quantidade)}&nbsp;
                                             {elem.unidade}
                                         </span>
                                     </li>

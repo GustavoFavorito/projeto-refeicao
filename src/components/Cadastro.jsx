@@ -202,11 +202,14 @@ function Cadastro() {
                                         required
                                     >
                                         <option value="">--Selecione uma Unidade--</option>
+                                        <option value="unidade">Unidade</option>
                                         <option value="g">g</option>
+                                        <option value="Kg">Kg</option>
                                         <option value="mL">mL</option>
+                                        <option value="L">L</option>
                                         <option value="cc">Colher de Chá (cc)</option>
                                         <option value="cs">Colher de Sopa (cs)</option>
-                                        <option value="xíc">Xícara (cs)</option>
+                                        <option value="xíc">Xícara (xíc)</option>
                                     </select>
                                 </div>
                                 <div className="botao-remover form-group col-md-1">
