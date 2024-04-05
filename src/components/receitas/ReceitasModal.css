@@ -12,6 +12,7 @@
     display: inline-block;
     overflow: scroll;
     scrollbar-width: none;
+    white-space: pre-line;
 }
 
 .receitas-modal-overlay {

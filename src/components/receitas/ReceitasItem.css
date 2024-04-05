@@ -16,6 +16,10 @@
     border-radius: 30px;
     transition: 0.4s;
     background-color: #fff;
+    max-height: 80vh;
+    overflow:hidden;
+    display:inline-block;
+    white-space: nowrap;
 }
 
 .receitas-item:hover {
@@ -37,6 +41,7 @@
     color: rgba(0, 0, 0, 0.7);
     text-align: center;
     padding-top: 10px;
+    text-wrap: wrap;
 }
 
 .receitas-item-imagem {
