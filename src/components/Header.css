@@ -39,7 +39,7 @@ header {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 90%;
+    font-size: 1.25rem;
     border-bottom: 2px solid transparent;
     -webkit-transition: border-bottom 0.2s;
     -o-transition: border-bottom 0.2s;

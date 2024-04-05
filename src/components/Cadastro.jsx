@@ -98,55 +98,50 @@ function Cadastro() {
                 autoComplete="off"
                 className="form-cadastro"
             >
-                <div className="form-group form-campos_receita">
-                    <div className="form-row align-items-center">
-                        <div className="col col-md-4">
-                            <div className="form-titulo">
-                                <label htmlFor="titulo">Nome da Receita</label>
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    name="titulo"
-                                    id="titulo"
-                                    placeholder="Receita"
-                                    value={newTitulo}
-                                    onChange={handleTituloChange}
-                                    required
-                                />
-                            </div>
-                            <div className="form-imagem">
-                                <label htmlFor="image_path">
-                                    Foto da Receita
-                                </label>
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    name="image_path"
-                                    id="image_path"
-                                    placeholder="Foto"
-                                    value={newImagem}
-                                    onChange={handleImagemChange}
-                                    required
-                                />
-                            </div>
+                <div className="form-group">
+                    <div className="form-row">
+                        <div className="col">
+                            <label htmlFor="titulo">Nome da Receita</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                name="titulo"
+                                id="titulo"
+                                placeholder="Receita"
+                                value={newTitulo}
+                                onChange={handleTituloChange}
+                                required
+                            />
                         </div>
-                        <div className="col col-md-8">
-                            <div className="form-descricao">
-                                <label htmlFor="descricao">Passo a Passo</label>
-                                <textarea
-                                    name="descricao"
-                                    className="form-control"
-                                    id="descricao"
-                                    placeholder="Passo-a-Passo"
-                                    value={newDescricao}
-                                    onChange={handleDescricaoChange}
-                                    required
-                                ></textarea>
-                            </div>
+                        <div className="col">
+                            <label htmlFor="image_path">Foto da Receita</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                name="image_path"
+                                id="image_path"
+                                placeholder="Foto"
+                                value={newImagem}
+                                onChange={handleImagemChange}
+                                required
+                            />
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className="form-group">
+                    <label htmlFor="descricao">Passo a Passo</label>
+                    <textarea
+                        name="descricao"
+                        className="form-control"
+                        rows="3"
+                        id="descricao"
+                        placeholder="Passo-a-Passo"
+                        value={newDescricao}
+                        onChange={handleDescricaoChange}
+                        required
+                    ></textarea>
+                </div>
+                <div className="form-group">
                     {ingredientesList.map((ingrediente, index) => {
                         return (
                             <div
@@ -231,7 +226,7 @@ function Cadastro() {
                         </button>
                     </div>
                 </div>
-                <div className='d-flex justify-content-start'>
+                <div className="d-flex justify-content-start">
                     <input
                         type="submit"
                         className="btn btn-primary"
