@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import Fraction from 'fraction.js';
 import './Cadastro.css';
 
 function Cadastro() {
@@ -56,6 +57,15 @@ function Cadastro() {
         };
 
         if (ingredientesList.length > 2) {
+            ingredientesList.map((item) => {
+                try {
+                    item.quantidade = item.quantidade.toString().replace(',', '.');
+                    item.quantidade = new Fraction(item.quantidade).valueOf();
+                } catch (err) {
+                    alert('O campo "Quantidade" deve ser preenchido com um número ou uma fração!');
+                }
+            });
+
             receita.ingredientes = ingredientesList;
 
             await fetch(url, {
@@ -78,7 +88,9 @@ function Cadastro() {
                     setNewImagem('');
                     setNewDescricao('');
                     setIngredientesList([
-                        { nome: '', quantidade: '', unidade: '' },
+                        { nome: '', quantidade: '0', unidade: '' },
+                        { nome: '', quantidade: '0', unidade: '' },
+                        { nome: '', quantidade: '0', unidade: '' },
                     ]);
                 })
                 .catch((err) => {
@@ -171,8 +183,7 @@ function Cadastro() {
                                         Quantidade
                                     </label>
                                     <input
-                                        type="number"
-                                        min="0"
+                                        type="text"
                                         className="form-control"
                                         name="quantidade"
                                         id="quantidade"
@@ -201,15 +212,23 @@ function Cadastro() {
                                         value={ingrediente.unidade}
                                         required
                                     >
-                                        <option value="">--Selecione uma Unidade--</option>
+                                        <option value="">
+                                            --Selecione uma Unidade--
+                                        </option>
                                         <option value="unidade">Unidade</option>
                                         <option value="g">g</option>
                                         <option value="Kg">Kg</option>
                                         <option value="mL">mL</option>
                                         <option value="L">L</option>
-                                        <option value="cc">Colher de Chá (cc)</option>
-                                        <option value="cs">Colher de Sopa (cs)</option>
-                                        <option value="xíc">Xícara (xíc)</option>
+                                        <option value="cc">
+                                            Colher de Chá (cc)
+                                        </option>
+                                        <option value="cs">
+                                            Colher de Sopa (cs)
+                                        </option>
+                                        <option value="xíc">
+                                            Xícara (xíc)
+                                        </option>
                                         <option value="pitada">Pitada</option>
                                         <option value="a gosto">a gosto</option>
                                     </select>
