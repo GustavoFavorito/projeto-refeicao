@@ -1,0 +1,42 @@
+.cadastro {
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            from(rgba(0, 0, 0, 0.7)),
+            to(rgba(0, 0, 0, 0.7))
+        ),
+        url(/compras.jpg);
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(/compras.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(/compras.jpg);
+    background-size: cover;
+    background-position: top;
+    height: 100%;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.form-cadastro {
+    margin: auto 25vw;
+    padding-bottom: 5vh;
+    width: auto;
+}
+
+.select-method {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    text-align: center;
+    margin: auto;
+}
+
+.select {
+    width: 15rem;
+    height: 2rem;
+    border-radius: 30px;
+    text-align: center;
+    opacity: 0.8;
+    border: none;
+    background-color: rgb(211, 211, 211);
+}
