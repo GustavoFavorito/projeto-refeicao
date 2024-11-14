@@ -12,5 +12,4 @@ export default defineConfig({
       '@': '/src', // If you're using aliases, make sure they are correctly defined
     },
   },
-  base: '/',
 })
