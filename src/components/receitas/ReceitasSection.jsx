@@ -4,7 +4,7 @@ import ReceitasItem from "./ReceitasItem";
 
 function ReceitasSection() {
 
-    const url = "https://projeto-residencia.rj.r.appspot.com/receita";
+    const url = "https://apirefeicaonew.netlify.app/receita";
     const [ingredientesObject, setIngredientesObject] = useState([]);
   
     const fetchIngredientesObject = async () => {

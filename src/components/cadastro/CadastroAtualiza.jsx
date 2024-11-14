@@ -11,7 +11,7 @@ function CadastroAtualiza({ httpMethod }) {
         useState('');
     const [selectedReceitaIngredientes, setSelectedReceitaIngredientes] =
         useState([{ nome: '', quantidade: '0', unidade: '' }]);
-    const url = 'https://projeto-residencia.rj.r.appspot.com/receita';
+    const url = 'https://apirefeicaonew.netlify.app/receita';
 
     const getReceitasFromApiAsync = async (url) => {
         try {

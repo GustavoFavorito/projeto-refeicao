@@ -4,7 +4,7 @@ import Fraction from 'fraction.js';
 function CadastroInsere({ httpMethod }) {
     if (httpMethod != 'post') return null;
 
-    const url = 'https://projeto-residencia.rj.r.appspot.com/receita';
+    const url = 'https://apirefeicaonew.netlify.app/receita';
     const [newTitulo, setNewTitulo] = useState('');
     const [newImagem, setNewImagem] = useState('');
     const [newDescricao, setNewDescricao] = useState('');

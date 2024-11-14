@@ -3,7 +3,7 @@ import "./Ingredientes.css";
 
 function Ingredientes() {
 
-    const url = "https://projeto-residencia.rj.r.appspot.com/receita";
+    const url = "https://apirefeicaonew.netlify.app/receita";
     const [headers, setHeaders] = useState([]);
     const [ingredientes, setIngredientes] = useState([]);
   
