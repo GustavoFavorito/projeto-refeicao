@@ -219,6 +219,9 @@ function CadastroInsere({ httpMethod }) {
                                     <option value="cs">
                                         Colher de Sopa (cs)
                                     </option>
+                                    <option value="csal">
+                                        Colher de Sal (csal)
+                                    </option>
                                     <option value="xíc">Xícara (xíc)</option>
                                     <option value="pitada">Pitada</option>
                                     <option value="a gosto">a gosto</option>
